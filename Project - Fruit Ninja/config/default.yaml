@@ -1,0 +1,6 @@
+verbose: False
+visualize: True
+model_path: '/home/student/16662_RobotAutonomy/src/devel_packages/fruit-ninja-vision/best_new.pt'
+sub_box_scale: 2           # The relative scale to sub-sample within the bounding box (2 = 1/2 scale)
+position_history_length: 4 # The number of positions to use when calculating velocity
+plane_height: 0.2          # The height of the plane to calculate impact

@@ -1,0 +1,14 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="visualize" default="False"/>
+
+    <!-- Camera Driver, TF Publisher, and Tracker -->
+    <include file="$(find azure_kinect_ros_driver)/launch/fruit_driver.launch"/>
+    <node pkg="fruit-ninja-vision" name="tf_publisher" type="easy_tf_publisher.py" output="screen"/>
+    <node pkg="fruit-ninja-vision" name="track_fruit" type="track-fruit.py" output="screen"/>
+
+    <!-- Visualization -->
+    <group if="$(arg visualize)">
+        <node type="rviz" name="rviz" pkg="rviz" args="-d $(find fruit-ninja-vision)/rviz/fruit-ninja-vision.rviz"/>
+    </group>
+</launch>
